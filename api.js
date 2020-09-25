@@ -13,8 +13,10 @@ const makeRequest = (path, params) =>
 const getAnyThing = async(path, params = {}) => {
     try {
         const {
-            data: {results}
+            data: {results},
+            data
         } = await makeRequest(path, params)
+        return [results || data, null]
     } catch (e) {
         return [null, e];
     }
@@ -22,6 +24,6 @@ const getAnyThing = async(path, params = {}) => {
 
 export const movieApi = {
     nowPlaying: () => getAnyThing("/movie/now_playing"),
-    popular: () => getAnything("/movie/popular"),
-    upcoming: () => getAnything("/movie/upcoming")
+    popular: () => getAnyThing("/movie/popular"),
+    upcoming: () => getAnyThing("/movie/upcoming")
 }
