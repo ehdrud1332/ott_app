@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, Image, View} from 'react-native';
+import {StatusBar, Image} from 'react-native';
 import {AppLoading} from 'expo';
 import {Asset} from 'expo-asset';
 import * as Font from 'expo-font';
@@ -37,6 +37,7 @@ const App = () => {
 
     return isReady ? (
        <NavigationContainer>
+           <StatusBar barStyle= "light-content" />
            <Stack />
        </NavigationContainer>
     ) : (
