@@ -21,7 +21,15 @@ export default ({navigation, route}) => {
     }, [route]);
 
     return (
-        <tabs.Navigator>
+        <tabs.Navigator
+            tabBarOptions={{
+                showLabel: false,
+                style: {
+                    backgroundColor: "black",
+                    borderTopColor: "black",
+                }
+            }}
+        >
             <tabs.Screen
                 name="Movies"
                 component={Movies}
@@ -30,7 +38,7 @@ export default ({navigation, route}) => {
                         <MaterialIcons
                             name="local-movies"
                             size={26}
-                            color={focused ? "black" : "grey"}
+                            color={focused ? "white" : "grey"}
                         />
                     )
                 }}
@@ -43,7 +51,7 @@ export default ({navigation, route}) => {
                         <AntDesign
                             name="heart"
                             size={26}
-                            color={focused ? "black" : "grey"}
+                            color={focused ? "white" : "grey"}
                         />
                     )
                 }}
@@ -56,7 +64,7 @@ export default ({navigation, route}) => {
                         <Feather
                             name="search"
                             size={26}
-                            color={focused ? "black" : "grey"}
+                            color={focused ? "white" : "grey"}
                         />
                     )
                 }}
@@ -68,7 +76,7 @@ export default ({navigation, route}) => {
                     <Ionicons
                         name="md-person"
                         size={26}
-                        color={focused ? "black" : "grey"}
+                        color={focused ? "white" : "grey"}
                     />
                 )
             }}
